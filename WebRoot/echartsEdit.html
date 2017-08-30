@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="echarts.min.js"></script>
+<script src="jquery.js"></script>
+<script src="echartsEdit.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="main"></div>
+	<div class="splitpane">
+		<div>
+			<label for="NodeName">节点名称：</label><input type="text" id="NodeName">
+			<label for="NodeColor">节点颜色：</label> <select name="NodeColor"
+				id="NodeColor">
+				<option value="pink">红色</option>
+				<option value="red">粉色</option>
+				<option value="purple">紫色</option>
+				<option value="deep-purple">深紫</option>
+				<option value="indigo">靛蓝</option>
+				<option value="blue">蓝色</option>
+				<option value="teal">兰绿</option>
+				<option value="cyan">青色</option>
+				<option value="light-blue">浅蓝</option>
+				<option value="lime">绿黄</option>
+				<option value="light-green">浅绿</option>
+				<option value="green">绿色</option>
+				<option value="deep-orange">深橙</option>
+				<option value="orange">橙色</option>
+				<option value="amber">琥珀</option>
+				<option value="yellow">黄色</option>
+			</select> <label for="NodeSize">节点大小：</label><input type="text" id="NodeSize">
+			<button class="addNode">增加节点</button>
+		</div>
+		<div>
+			<label for="source">从：</label><input type="text" id="source">
+			<label for="target">属：</label> <input type="text" id="target">
+			<label for="attributes">关系：</label><input type="text" id="attributes">
+			<button class="addLink">增加关系</button>
+		</div>
+	</div>
+</body>
+<style type="text/css">
+.splitpane {
+	position: fixed;
+	width: 20%;
+	height: 100%;
+	left: 0;
+	background: #FFF;
+	border-right: 2px solid #EEE;
+}
+
+#main {
+	width: 80%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+</style>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="default" extends="json-default">
+		<action name="echartsDisplay" class="com.echarts.action.echartsDisplayAction"
+			method="echartsDisplay">
+			<result type="json">
+				<param name="root">echartsData</param>
+			</result>
+		</action>
+		<action name="echartsInsertNodes" class="com.echarts.action.echartsDisplayAction"
+			method="echartsInsertNodes">
+			<result type="json">
+				<param name="root">addNodeData</param>
+			</result>
+		</action>
+		<action name="echartsInsertLinks" class="com.echarts.action.echartsDisplayAction"
+			method="echartsInsertLinks">
+			<result type="json">
+				<param name="root">addLinkData</param>
+			</result>
+		</action>
+		<action name="ArticleAction_addType" class="com.echarts.action.ArticleAction" method="addType">  
+        <result name="success" type="json"></result>  
+    </action>  
+	</package>
+</struts>

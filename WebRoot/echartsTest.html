@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<!-- 为 ECharts 准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 1000px;height:800px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    option = {
+        title: {
+            text: 'Graph 简单示例'
+        },
+        tooltip: {},
+        legend: [{
+            // selectedMode: 'single',
+            data: []
+        }],
+        animation: false,
+        series : [
+            {
+                type: 'graph',
+                layout: 'force',
+                symbolSize: 10,
+                roam: true,
+                label: {
+                    normal: {
+                        show: true
+                    }
+                },
+                force:{repulsion: 4000},
+                nodes:[
+
+                ],
+                links : [
+                    
+                ],
+                draggable:true,
+           
+
+
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+
+
+    $.ajax({
+        url:'echartsDisplay',
+        type:'POST',
+        data:"{}",
+        dataType:'json',
+        success:function (data) {
+
+                option.series[0].nodes=data.echartsData.nodes;
+                option.series[0].links=data.echartsData.links;
+				myChart.setOption(option);
+
+
+        },
+        error: function (errorMsg) {
+
+            alert("不好意思，大爷，图表请求数据失败啦!");
+
+    }
+    });
+</script>
+
+
+</body>
+</html>
